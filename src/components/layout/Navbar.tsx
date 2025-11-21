@@ -36,7 +36,7 @@ export const Navbar: React.FC = () => {
             <div className={clsx(
                 "w-full max-w-6xl rounded-full transition-all duration-500 flex items-center justify-between px-8 py-4 backdrop-blur-xl border border-white/10 shadow-2xl",
                 isScrolled
-                    ? "bg-background/80 shadow-xl scale-100"
+                    ? "bg-background/90 shadow-xl scale-100" // Higher opacity for elevation
                     : "bg-background/60 scale-105"
             )}>
                 {/* Logo */}

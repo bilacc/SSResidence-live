@@ -29,14 +29,14 @@ export const ContactForm: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="py-20 bg-cream dark:bg-primary-dark">
+        <section id="contact" className="py-20 bg-cream dark:bg-[#020817]">
             <div className="container mx-auto px-6">
-                <div className="max-w-4xl mx-auto bg-white dark:bg-primary p-8 md:p-12 rounded-2xl shadow-xl">
+                <div className="max-w-4xl mx-auto bg-white dark:bg-card border border-transparent dark:border-white/10 p-8 md:p-12 rounded-2xl shadow-xl">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary dark:text-cream mb-4">
+                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary dark:text-white mb-4">
                             {t('contact.title')}
                         </h2>
-                        <p className="text-primary/60 dark:text-cream/60">
+                        <p className="text-primary/60 dark:text-muted-foreground">
                             Interested in a viewing? Fill out the form below and our team will contact you shortly.
                         </p>
                     </div>
@@ -44,19 +44,19 @@ export const ContactForm: React.FC = () => {
                     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label className="block text-sm font-medium text-primary dark:text-cream mb-2">Name</label>
+                                <label className="block text-sm font-medium text-primary dark:text-gray-200 mb-2">Name</label>
                                 <input
                                     {...register('name')}
-                                    className="w-full px-4 py-3 bg-cream dark:bg-primary-light border border-primary/10 dark:border-cream/10 rounded-lg focus:outline-none focus:border-accent transition-colors"
+                                    className="w-full px-4 py-3 bg-cream dark:bg-input border border-primary/10 dark:border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors text-primary dark:text-white"
                                     placeholder="John Doe"
                                 />
                                 {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-primary dark:text-cream mb-2">Email</label>
+                                <label className="block text-sm font-medium text-primary dark:text-gray-200 mb-2">Email</label>
                                 <input
                                     {...register('email')}
-                                    className="w-full px-4 py-3 bg-cream dark:bg-primary-light border border-primary/10 dark:border-cream/10 rounded-lg focus:outline-none focus:border-accent transition-colors"
+                                    className="w-full px-4 py-3 bg-cream dark:bg-input border border-primary/10 dark:border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors text-primary dark:text-white"
                                     placeholder="john@example.com"
                                 />
                                 {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
@@ -64,21 +64,21 @@ export const ContactForm: React.FC = () => {
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-primary dark:text-cream mb-2">Phone</label>
+                            <label className="block text-sm font-medium text-primary dark:text-gray-200 mb-2">Phone</label>
                             <input
                                 {...register('phone')}
-                                className="w-full px-4 py-3 bg-cream dark:bg-primary-light border border-primary/10 dark:border-cream/10 rounded-lg focus:outline-none focus:border-accent transition-colors"
+                                className="w-full px-4 py-3 bg-cream dark:bg-input border border-primary/10 dark:border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors text-primary dark:text-white"
                                 placeholder="+1 (555) 000-0000"
                             />
                             {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
                         </div>
 
                         <div>
-                            <label className="block text-sm font-medium text-primary dark:text-cream mb-2">Message</label>
+                            <label className="block text-sm font-medium text-primary dark:text-gray-200 mb-2">Message</label>
                             <textarea
                                 {...register('message')}
                                 rows={4}
-                                className="w-full px-4 py-3 bg-cream dark:bg-primary-light border border-primary/10 dark:border-cream/10 rounded-lg focus:outline-none focus:border-accent transition-colors"
+                                className="w-full px-4 py-3 bg-cream dark:bg-input border border-primary/10 dark:border-white/10 rounded-lg focus:outline-none focus:border-primary transition-colors text-primary dark:text-white"
                                 placeholder="I'm interested in the penthouse..."
                             />
                             {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>}
@@ -88,7 +88,7 @@ export const ContactForm: React.FC = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             disabled={isSubmitting}
-                            className="w-full py-4 bg-accent text-primary font-bold text-lg rounded-lg hover:bg-accent-light transition-colors shadow-lg hover:shadow-accent/20 disabled:opacity-50"
+                            className="w-full py-4 bg-accent dark:bg-primary text-primary dark:text-primary-foreground font-bold text-lg rounded-lg hover:bg-accent-light dark:hover:bg-primary/90 transition-colors shadow-lg hover:shadow-accent/20 disabled:opacity-50"
                         >
                             {isSubmitting ? 'Sending...' : 'Send Message'}
                         </motion.button>

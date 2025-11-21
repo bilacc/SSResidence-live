@@ -11,6 +11,7 @@ export default {
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",
                 background: "hsl(var(--background))",
+                surface: "hsl(var(--card))", // Mapping surface to card for now as base elevated surface
                 foreground: "hsl(var(--foreground))",
                 primary: {
                     DEFAULT: "hsl(var(--primary))",
