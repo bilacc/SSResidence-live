@@ -2,87 +2,96 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Light Mode Palette: "Golden Hour Serenity" */
+    --bg-primary: #FEF4D5; /* Soft Beige */
+    --text-primary: #2C1810; /* Deep Espresso */
+    --text-secondary: #E6D17B; /* Warm Taupe */
+    --accent-primary: #F1E49A; /* Radiant Gold */
+    --accent-secondary: #DAA520; /* Muted Amber */
+    --neutral: #FFFDF5; /* Light Cream */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Semantic Mapping */
+    --background: var(--bg-primary);
+    --foreground: var(--text-primary);
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --card: var(--neutral);
+    --card-foreground: var(--text-primary);
 
-    --primary: 222.2 47.4% 11.2%;
-    /* Deep Navy */
-    --primary-foreground: 210 40% 98%;
+    --popover: var(--neutral);
+    --popover-foreground: var(--text-primary);
 
-    --secondary: 43 54% 56%;
-    /* Gold */
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary: var(--accent-primary);
+    --primary-foreground: var(--text-primary);
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --secondary: var(--accent-secondary);
+    --secondary-foreground: var(--bg-primary);
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --muted: #F0EAD6; /* Slightly darker beige for muted backgrounds */
+    --muted-foreground: #8C7B75; /* Muted brownish-grey for readability */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: var(--accent-secondary);
+    --accent-foreground: var(--bg-primary);
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: #E6D17B; /* Warm Taupe for borders */
+    --input: #E6D17B;
+    --ring: var(--accent-secondary);
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 7%;
-    /* #121212 */
-    --foreground: 0 0% 100%;
-    /* High Emphasis Text */
+    /* Dark Mode Palette: "Midnight Prestige" */
+    --bg-primary: #1A1A2E; /* Deep Indigo */
+    --text-primary: #E0E0E0; /* Soft Ivory */
+    --text-secondary: #A8A8A8; /* Muted Slate */
+    --accent-primary: #EFC07B; /* Golden Glow */
+    --accent-secondary: #0F3460; /* Navy Teal */
+    --neutral: #16213E; /* Charcoal Blue */
 
-    --card: 0 0% 12%;
-    /* #1E1E1E (Surface + 1dp) */
-    --card-foreground: 0 0% 100%;
+    /* Semantic Mapping */
+    --background: var(--bg-primary);
+    --foreground: var(--text-primary);
 
-    --popover: 0 0% 18%;
-    /* #2D2D2D (Surface + 8dp) */
-    --popover-foreground: 0 0% 100%;
+    --card: var(--neutral);
+    --card-foreground: var(--text-primary);
 
-    --primary: 210 89% 77%;
-    /* #90CAF9 (Desaturated Blue 200) */
-    --primary-foreground: 0 0% 0%;
+    --popover: var(--neutral);
+    --popover-foreground: var(--text-primary);
 
-    --secondary: 262 27% 81%;
-    /* #CCC2DC (Desaturated Secondary 200) */
-    --secondary-foreground: 0 0% 0%;
+    --primary: var(--accent-primary);
+    --primary-foreground: #1A1A2E; /* Dark text on gold button */
 
-    --muted: 0 0% 100% / 0.05;
-    --muted-foreground: 0 0% 100% / 0.60;
-    /* Medium Emphasis */
+    --secondary: var(--accent-secondary);
+    --secondary-foreground: var(--text-primary);
 
-    --accent: 0 0% 100% / 0.10;
-    --accent-foreground: 0 0% 100%;
+    --muted: #1F2A40; /* Slightly lighter than bg */
+    --muted-foreground: var(--text-secondary);
 
-    --destructive: 348 53% 60%;
-    /* #CF6679 */
-    --destructive-foreground: 0 0% 0%;
+    --accent: var(--accent-secondary);
+    --accent-foreground: var(--text-primary);
 
-    --border: 0 0% 100% / 0.12;
-    --input: 0 0% 100% / 0.12;
-    --ring: 210 89% 77%;
+    --destructive: #7f1d1d;
+    --destructive-foreground: #ffffff;
+
+    --border: #2E3B55; /* Subtle border */
+    --input: #2E3B55;
+    --ring: var(--accent-primary);
   }
 }
 
 * {
-  border-color: hsl(var(--border));
+  border-color: var(--border);
 }
 
 body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1,
